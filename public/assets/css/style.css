@@ -125,3 +125,6 @@ header.hero.compact{padding:56px 0 48px}
 .hashtags a:hover{color:var(--accent);border-color:var(--accent)}
 .embed{display:flex;justify-content:center;margin:1.6em 0}
 .embed iframe{width:100%;max-width:504px;height:760px;border:1px solid var(--line);border-radius:12px;background:#fff}
+
+/* lista de publicações: no máximo 3 colunas */
+#lista{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}

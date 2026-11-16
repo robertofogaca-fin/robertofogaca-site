@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-20CN7NE9XW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-20CN7NE9XW');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rodei meu detector de anomalias contábeis em 500 mil lançamentos. Ele marcou 100% como suspeito — Roberto Fogaça</title>
+<meta name="description" content="Validação externa de um detector de anomalias contábeis em 500 mil lançamentos: por que as regras viraram ruído em outra base e como a calibração levou a precision de 7% para 99,7%.">
+<link rel="canonical" href="https://robertofogaca.com.br/publicacoes/validacao-500-mil-lancamentos">
+<meta name="author" content="Roberto Fogaça">
+<meta property="article:author" content="Roberto Fogaça">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rodei meu detector de anomalias contábeis em 500 mil lançamentos. Ele marcou 100% como suspeito">
+<meta property="og:description" content="Validação externa de um detector de anomalias contábeis em 500 mil lançamentos: por que as regras viraram ruído em outra base e como a calibração levou a precision de 7% para 99,7%.">
+<meta property="article:published_time" content="2026-11-12T09:00:00-03:00">
+<meta property="og:url" content="https://robertofogaca.com.br/publicacoes/validacao-500-mil-lancamentos">
+<meta property="og:image" content="https://robertofogaca.com.br/assets/img/publicacoes/validacao-500mil-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<nav><div class="wrap"><b><a href="../index.html">Roberto Fogaça</a></b>
+<div class="links"><a href="../index.html#sobre">Sobre</a><a href="../index.html#cases">Cases</a><a href="../index.html#competencias">Competências</a><a href="../index.html#projetos">Projetos</a><a href="../index.html#trajetoria">Trajetória</a><a href="../publicacoes.html" aria-current="page">Publicações</a><a href="../index.html#contato">Contato</a></div></div></nav>
+
+<header class="article-head"><div class="wrap">
+<a class="back" href="../publicacoes.html">← Todas as publicações</a>
+<div><span class="tag">Contabilidade e dados</span></div>
+<h1>Rodei meu detector de anomalias contábeis em 500 mil lançamentos. Ele marcou <em style="color:var(--accent)">100% como suspeito</em>.</h1>
+<p class="sub">Base de outra pessoa, com 5 tipos de anomalia rotulados e plano de contas COSIF.</p>
+<div class="meta">Roberto Fogaça · 12 de novembro de 2026 · 3 min de leitura · Publicado originalmente no LinkedIn</div>
+</div></header>
+
+<main class="prose-wrap">
+<article class="prose">
+
+<p>Depois de validar o projeto em dados que eu mesmo gerei, quis testar em uma base que eu não construí: 500 mil lançamentos fictícios, 5 tipos de anomalia rotulados por outra pessoa, plano de contas no formato COSIF.</p>
+
+<div class="stat-row">
+<div><b>100%</b><span>da base sinalizada na 1ª rodada · precision 7%</span></div>
+<div><b>7%</b><span>da base sinalizada depois de calibrar</span></div>
+<div><b>99,7%</b><span>precision, com recall de 99,9%</span></div>
+</div>
+
+<!-- Carrossel: as imagens ficam em assets/img/publicacoes/ -->
+<div class="carousel" aria-label="Carrossel publicado no LinkedIn">
+<div class="slides" id="slides" tabindex="0">
+<img src="../assets/img/publicacoes/validacao-500mil-1.jpg" alt="Capa: Rodei meu detector em 500 mil lançamentos. Ele marcou 100% como suspeito." width="825" height="1031">
+<img src="../assets/img/publicacoes/validacao-500mil-2.jpg" alt="O resultado: mesma base, duas configurações" width="825" height="1031" loading="lazy">
+<img src="../assets/img/publicacoes/validacao-500mil-3.jpg" alt="O que quebrou: por que marcou tudo" width="825" height="1031" loading="lazy">
+<img src="../assets/img/publicacoes/validacao-500mil-4.jpg" alt="Como ler: sinalizados, precision e recall" width="825" height="1031" loading="lazy">
+<img src="../assets/img/publicacoes/validacao-500mil-5.jpg" alt="O que foi ajustado: calibrar para a base" width="825" height="1031" loading="lazy">
+<img src="../assets/img/publicacoes/validacao-500mil-6.jpg" alt="Um aviso honesto: o que o resultado não prova" width="825" height="1031" loading="lazy">
+<img src="../assets/img/publicacoes/validacao-500mil-7.jpg" alt="Vamos trocar ideias?" width="825" height="1031" loading="lazy">
+</div>
+<div class="carousel-ctrl">
+<button type="button" id="prev" aria-label="Slide anterior">←</button>
+<span id="count">1 / 7</span>
+<button type="button" id="next" aria-label="Próximo slide">→</button>
+</div>
+</div>
+
+<h2>Mesma base, duas configurações</h2>
+<table>
+<thead><tr><th>Configuração</th><th>Base sinalizada</th><th>Precision</th><th>Recall</th></tr></thead>
+<tbody>
+<tr><td>Padrão do projeto (só renomeando as colunas)</td><td>100%</td><td>7%</td><td>—</td></tr>
+<tr><td><b>Calibrada</b></td><td><b>7%</b></td><td><b>99,7%</b></td><td><b>99,9%</b></td></tr>
+</tbody>
+</table>
+<p>500 mil lançamentos em 13 segundos no meu teste.</p>
+
+<h2>Por que quebrou</h2>
+<ol>
+<li>As contas da base não estavam no meu elenco COSIF (estrutura anterior, DV diferente), então a regra de conta inválida marcou tudo.</li>
+<li>28% dos lançamentos, normais inclusive, caem em fim de semana: a regra de dia não útil não separava nada.</li>
+<li>Só 1 dos meus detectores funcionava. Para documento repetido, centro de custo, histórico e usuário incomuns, precisei de detectores de raridade que não dependem de plano nem de perfil.</li>
+</ol>
+
+<h2>O que foi ajustado</h2>
+<table>
+<thead><tr><th>Ajuste</th><th>O que faz</th></tr></thead>
+<tbody>
+<tr><td>Plano próprio</td><td>Desliga as regras de conta inválida e de vigência.</td></tr>
+<tr><td>Sem dia não útil</td><td>Fim de semana é normal nessa base.</td></tr>
+<tr><td>Detectores de raridade</td><td>Documento repetido, centro de custo, histórico e usuário.</td></tr>
+<tr><td>Colunas ausentes</td><td>Detectores sem a coluna se desligam sozinhos.</td></tr>
+</tbody>
+</table>
+
+<h2>Duas lições</h2>
+<ol>
+<li><b>Regra de controle carrega premissas</b> (plano, calendário, perfil). Em outra base, a premissa quebra e o alerta vira ruído. Calibrar é parte do trabalho.</li>
+<li><b>Os pesos do score não transferem:</b> aqui só 77 lançamentos chegaram a nível alto.</li>
+</ol>
+
+<div class="callout"><b>Um aviso honesto:</b> nessa base as anomalias se entregam por um valor exato (um centro de custo "INEXISTENTE", um único usuário). O resultado de ~100% mostra que o pipeline escala e se adapta, não que ele acha anomalia sutil.</div>
+
+<p>O projeto agora lê CSV ou Excel com mapeamento de colunas e desliga sozinho os detectores que dependem de colunas ausentes.</p>
+
+<p><b>Que premissa de controle você já viu virar ruído em outra base?</b> Conta nos comentários do post original.</p>
+
+<div class="callout"><b>Código e resultados:</b> o projeto é aberto e está no GitHub.
+<p style="margin:.8em 0 0"><a class="btn small" href="https://github.com/robertofogaca-fin/accounting-risk-analytics" target="_blank" rel="noopener">Ver o projeto no GitHub ↗</a></p></div>
+
+<p style="font-size:16px;color:var(--muted)">Leia também: <a href="regras-vs-estatistica.html">O limite das regras na auditoria contínua: por que a estatística aumenta o recall de 66,7% para 100%</a>, o primeiro teste do projeto, em dados que eu mesmo gerei.</p>
+
+</article>
+
+<div class="share">
+<span>Compartilhar:</span>
+<a class="btn small" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Frobertofogaca.com.br%2Fpublicacoes%2Fvalidacao-500-mil-lancamentos">LinkedIn</a>
+<a class="btn small outline" target="_blank" rel="noopener" href="https://wa.me/?text=Rodei%20meu%20detector%20de%20anomalias%20cont%C3%A1beis%20em%20500%20mil%20lan%C3%A7amentos%20https%3A%2F%2Frobertofogaca.com.br%2Fpublicacoes%2Fvalidacao-500-mil-lancamentos">WhatsApp</a>
+<a class="btn small outline" href="../downloads/Carrossel_Validacao_500mil_RF.pdf" download>Baixar carrossel (PDF)</a>
+<a class="btn small outline" target="_blank" rel="noopener" href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7526820138453704704/">Comentar no post original ↗</a>
+</div>
+
+<div class="hashtags">
+<a href="https://www.linkedin.com/search/results/all/?keywords=%23contabilidade" target="_blank" rel="noopener">#Contabilidade</a>
+<a href="https://www.linkedin.com/search/results/all/?keywords=%23python" target="_blank" rel="noopener">#Python</a>
+<a href="https://www.linkedin.com/search/results/all/?keywords=%23controlesinternos" target="_blank" rel="noopener">#ControlesInternos</a>
+<a href="https://www.linkedin.com/search/results/all/?keywords=%23cosif" target="_blank" rel="noopener">#COSIF</a>
+<a href="https://www.linkedin.com/search/results/all/?keywords=%23auditoria" target="_blank" rel="noopener">#Auditoria</a>
+</div>
+
+<h2 style="font-size:22px;margin:40px 0 0">A conversa continua no LinkedIn</h2>
+<div class="embed">
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7526820138453704704" loading="lazy" allowfullscreen title="Publicação incorporada do LinkedIn"></iframe>
+</div>
+
+<div class="author">
+<img src="../assets/img/roberto-fogaca.jpg" alt="Roberto Fogaça" width="72" height="72">
+<div><b>Roberto Fogaça</b>
+<p>Accounting Manager em instituições de pagamento reguladas pelo Banco Central. Contabilidade, tributário, regulatório BACEN e FP&amp;A. <a href="../index.html">Conheça minha trajetória</a>.</p></div>
+</div>
+<p class="note">As opiniões deste texto são pessoais e não representam a posição de nenhuma empresa. As bases usadas são fictícias.</p>
+</main>
+
+<footer><div class="wrap">© 2026 Roberto Fogaça · <a href="../publicacoes.html">Publicações</a></div></footer>
+
+<script>
+// Carrossel (não precisa mexer)
+(function(){
+  var s=document.getElementById('slides'),p=document.getElementById('prev'),n=document.getElementById('next'),c=document.getElementById('count');
+  var total=s.children.length;
+  function atual(){return Math.round(s.scrollLeft/(s.children[0].offsetWidth+12));}
+  function ir(i){i=Math.max(0,Math.min(total-1,i));s.scrollTo({left:i*(s.children[0].offsetWidth+12)});}
+  function upd(){var i=atual();c.textContent=(i+1)+' / '+total;p.disabled=i===0;n.disabled=i===total-1;}
+  p.onclick=function(){ir(atual()-1);};
+  n.onclick=function(){ir(atual()+1);};
+  s.addEventListener('scroll',function(){window.requestAnimationFrame(upd);});
+  s.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){ir(atual()+1);e.preventDefault();}if(e.key==='ArrowLeft'){ir(atual()-1);e.preventDefault();}});
+  upd();
+})();
+</script>
+</body>
+</html>
