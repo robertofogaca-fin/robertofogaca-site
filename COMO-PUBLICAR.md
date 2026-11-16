@@ -41,10 +41,16 @@ de cor no `style.css` vale para todas as páginas de uma vez.
 Copie um card do tipo 2 em `artigos.html`, cole o link do post (no LinkedIn:
 "..." → "Copiar link para o post") e escreva um resumo de uma linha.
 
-## Publicar uma planilha
+## O que vai em cada aba
+
+- **Artigos:** textos completos e posts do LinkedIn que valem ficar no site.
+- **Materiais:** arquivos só para download (planilhas, PDFs, modelos de documento).
+  Os carrosséis em PDF ficam dentro do artigo de cada post.
+
+## Publicar um material
 
 Coloque o arquivo em `downloads/` e copie um card `<article class="card material">`
-em `materiais.html`, trocando título, descrição e nome do arquivo.
+em `materiais.html`, trocando título, descrição, formato e nome do arquivo.
 
 ## Temas do filtro
 
