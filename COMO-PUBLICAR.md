@@ -78,3 +78,11 @@ Para criar um tema novo, adicione um botão em `.filters` com o mesmo valor.
 5. Para incorporar o post: no LinkedIn, abra o post → "..." → "Incorporar esta
    publicação". Copie só o endereço que aparece em `src="..."` e cole no
    `<iframe>` da seção "A conversa continua no LinkedIn".
+
+## Prévia do link no LinkedIn
+
+- A descrição (`og:description`) precisa ter **pelo menos 100 caracteres**.
+- A imagem de prévia (`og:image`) fica melhor **horizontal, em 1200 x 627 px**.
+  Imagens verticais, como a capa de um carrossel, aparecem cortadas.
+- Depois de publicar, cole o link em https://www.linkedin.com/post-inspector/
+  e clique em **Inspect**. Isso também força o LinkedIn a atualizar a prévia.
