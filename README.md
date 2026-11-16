@@ -5,8 +5,9 @@ Site pessoal de Roberto Fogaça: contabilidade, tributário, regulatório BACEN,
 Tudo o que vai ao ar fica na pasta `public/`:
 
 - `public/index.html`: página principal
-- `public/publicacoes.html`: aba Publicações
-- `public/publicacoes/`: um arquivo por artigo (`modelo-de-artigo.html` é o modelo)
+- `public/artigos.html`: aba Artigos
+- `public/materiais.html`: aba Materiais (planilhas)
+- `public/artigos/`: um arquivo por artigo (`modelo-de-artigo.html` é o modelo)
 - `public/assets/`: estilo e imagens
 - `public/downloads/`: planilhas e materiais
 

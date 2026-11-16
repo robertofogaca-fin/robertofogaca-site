@@ -7,8 +7,9 @@ Os caminhos abaixo são relativos a ela.
 
 ```
 index.html                     página principal (antes: o arquivo único v9)
-publicacoes.html               a aba Publicações (lista com filtro por tema)
-publicacoes/
+artigos.html                   a aba Artigos (lista com filtro por tema)
+materiais.html                 a aba Materiais (planilhas para download)
+artigos/
   modelo-de-artigo.html        modelo: duplique para cada artigo novo
 assets/
   css/style.css                toda a identidade visual (cores, fontes, cards)
@@ -22,7 +23,7 @@ de cor no `style.css` vale para todas as páginas de uma vez.
 
 ## Publicar um artigo novo (cerca de 10 minutos)
 
-1. Duplique `publicacoes/modelo-de-artigo.html` e renomeie com um nome curto,
+1. Duplique `artigos/modelo-de-artigo.html` e renomeie com um nome curto,
    sem acentos e com hífens. Exemplo: `reforma-tributaria-ips.html`.
 2. No novo arquivo, troque:
    - o bloco "TROQUE ESTES 4 ITENS" no topo (título, descrição e os dois links
@@ -30,21 +31,27 @@ de cor no `style.css` vale para todas as páginas de uma vez.
    - a etiqueta, o título, o subtítulo e a data no cabeçalho;
    - o texto dentro de `<article class="prose">`;
    - o link de compartilhamento (`url=`... com o endereço do artigo).
-3. Em `publicacoes.html`, copie um card `<article class="card post">` do tipo 1
+3. Em `artigos.html`, copie um card `<article class="card post">` do tipo 1
    e cole no topo da lista, apontando para o arquivo novo.
 4. Na `index.html`, seção "Últimos textos", mantenha os 3 mais recentes.
 5. Salve (commit) no GitHub. O Cloudflare publica sozinho em cerca de um minuto.
 
 ## Registrar um post do LinkedIn (cerca de 2 minutos)
 
-Copie um card do tipo 2 em `publicacoes.html`, cole o link do post (no LinkedIn:
+Copie um card do tipo 2 em `artigos.html`, cole o link do post (no LinkedIn:
 "..." → "Copiar link para o post") e escreva um resumo de uma linha.
+
+## Publicar uma planilha
+
+Coloque o arquivo em `downloads/` e copie um card `<article class="card material">`
+em `materiais.html`, trocando título, descrição e nome do arquivo.
 
 ## Temas do filtro
 
 O valor de `data-cat` do card precisa ser igual ao `data-filter` do botão:
 `contabilidade`, `regulatorio`, `tributario`, `tesouraria`, `fpa`, `carreira`.
 Para criar um tema novo, adicione um botão em `.filters` com o mesmo valor.
+Botões de temas sem nenhum artigo ficam escondidos automaticamente.
 
 ## Formatação dentro do artigo
 
@@ -66,7 +73,7 @@ Para criar um tema novo, adicione um botão em `.filters` com o mesmo valor.
 - O domínio usado nas tags `og:` e `canonical` é `https://robertofogaca.com.br`.
   Se o endereço for outro, troque com "Localizar e substituir" em todos os arquivos.
 
-## Publicar um post com carrossel (exemplo: publicacoes/gargalo-do-time.html)
+## Publicar um post com carrossel (exemplo: artigos/gargalo-do-time.html)
 
 1. Exporte cada página do PDF do carrossel como imagem JPG. Pode usar o Canva
    ("Baixar" → JPG → todas as páginas) ou um conversor de PDF para JPG.

@@ -1,0 +1,4 @@
+# Endereços antigos (antes de "Publicações" virar "Artigos")
+/publicacoes.html /artigos 301
+/publicacoes /artigos 301
+/publicacoes/* /artigos/:splat 301

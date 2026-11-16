@@ -128,3 +128,10 @@ header.hero.compact{padding:56px 0 48px}
 
 /* lista de publicações: no máximo 3 colunas */
 #lista{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+
+/* ===== Materiais ===== */
+.card.material{display:flex;flex-direction:column}
+.card.material .tag{align-self:flex-start}
+.card.material p{margin-bottom:10px}
+.card.material .meta{font-size:13px;color:var(--muted);margin-top:auto;padding-top:6px}
+.card.material .acoes{margin:14px 0 0}
