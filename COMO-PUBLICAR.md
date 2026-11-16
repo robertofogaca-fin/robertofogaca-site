@@ -2,6 +2,9 @@
 
 ## Estrutura
 
+Tudo o que vai ao ar fica dentro da pasta `public/` do repositório.
+Os caminhos abaixo são relativos a ela.
+
 ```
 index.html                     página principal (antes: o arquivo único v9)
 publicacoes.html               a aba Publicações (lista com filtro por tema)
@@ -30,7 +33,7 @@ de cor no `style.css` vale para todas as páginas de uma vez.
 3. Em `publicacoes.html`, copie um card `<article class="card post">` do tipo 1
    e cole no topo da lista, apontando para o arquivo novo.
 4. Na `index.html`, seção "Últimos textos", mantenha os 3 mais recentes.
-5. Suba os arquivos alterados para a hospedagem.
+5. Salve (commit) no GitHub. O Cloudflare publica sozinho em cerca de um minuto.
 
 ## Registrar um post do LinkedIn (cerca de 2 minutos)
 
